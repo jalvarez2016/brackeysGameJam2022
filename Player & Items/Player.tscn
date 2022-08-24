@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Player & Items/Player-export.png" type="Texture" id=2]
@@ -7,14 +7,240 @@
 radius = 16.0
 height = 10.6667
 
+[sub_resource type="Animation" id=2]
+resource_name = "AttackLeftNormal"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 34, -0.25, 0, 0.25, 0, 35, -0.25, 0, 0.25, 0, 36, -0.25, 0, 0.25, 0, 37, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7 )
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "AttackLeftStrong"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 12, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0, 14, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "AttackRightNormal"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 30, -0.25, 0, 0.25, 0, 31, -0.25, 0, 0.25, 0, 32, -0.25, 0, 0.25, 0, 33, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.7 )
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "AttackRightStrong"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 8, -0.25, 0, 0.25, 0, 9, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0, 11, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.7 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "EatNormal"
+length = 0.3
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 19, -0.25, 0, 0.25, 0, 20, -0.25, 0, 0.25, 0, 21, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.1, 0.2 )
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "EatStrong"
+length = 0.5
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 16, -0.25, 0, 0.25, 0, 17, -0.25, 0, 0.25, 0, 18, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.3 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "IdleLeftNormal"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 26, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "IdleLeftStrong"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "IdleRightNormal"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 22, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "IdleRightStrong"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 23, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "WalkLeftNormal"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 26, -0.25, 0, 0.25, 0, 27, -0.25, 0, 0.25, 0, 28, -0.25, 0, 0.25, 0, 29, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8 )
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "WalkLeftStrong"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6, 0.8 )
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "WalkRightNormal"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 22, -0.25, 0, 0.25, 0, 23, -0.25, 0, 0.25, 0, 24, -0.25, 0, 0.25, 0, 25, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.5, 0.8 )
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "WalkRightStrong"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.5, 0.7 )
+}
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-hframes = 19
+hframes = 38
+frame = 23
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -4.26326e-14, 16 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/AttackLeftNormal = SubResource( 2 )
+anims/AttackLeftStrong = SubResource( 10 )
+anims/AttackRightNormal = SubResource( 3 )
+anims/AttackRightStrong = SubResource( 11 )
+anims/EatNormal = SubResource( 6 )
+anims/EatStrong = SubResource( 12 )
+anims/IdleLeftNormal = SubResource( 4 )
+anims/IdleLeftStrong = SubResource( 13 )
+anims/IdleRightNormal = SubResource( 5 )
+anims/IdleRightStrong = SubResource( 14 )
+anims/RESET = SubResource( 7 )
+anims/WalkLeftNormal = SubResource( 8 )
+anims/WalkLeftStrong = SubResource( 15 )
+anims/WalkRightNormal = SubResource( 9 )
+anims/WalkRightStrong = SubResource( 16 )
+
+[node name="Strong Timer" type="Timer" parent="."]
+wait_time = 5.0

@@ -5,6 +5,7 @@ const MAX_SPEED = 120
 const FRICTION = 500
 var velocity = Vector2.ZERO
 var SPRINTSPEED = 1
+var ISStrong = false
 
 
 func _ready():
