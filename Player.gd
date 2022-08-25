@@ -9,8 +9,14 @@ var isSprinting = false
 var money = 0
 var lastKnownDirection = 0
 
-
 onready var animationPlayer = $AnimationPlayer
+export(float) var health = 5
+
+func loseHealth(amount):
+	health = health - amount
+
+func gainHealth(amount):
+	health = health + amount
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
