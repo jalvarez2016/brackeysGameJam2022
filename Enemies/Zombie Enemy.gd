@@ -13,9 +13,10 @@ enum {
 }
 var state = STAY
 
-export(int) var health = 3
+export(float) var health = 3
 
 func _physics_process(delta):
+	_damage_shade()
 	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
 	knockback = move_and_slide(knockback)
 	var playerVisible = playerDetectionZone._can_see_Player()
@@ -35,7 +36,7 @@ func _physics_process(delta):
 				pass
 				
 func _damage_shade():
-	sprite.material.set_shader_param("flash_modifier", 1)
+	sprite.material.set_shader_param("flash_modifier", 1 - (health/3))
 
 func _on_Hurtbox_area_entered(area):
 	health -= 1
