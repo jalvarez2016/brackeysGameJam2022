@@ -10,7 +10,11 @@ var money = 0
 var lastKnownDirection = 0
 
 onready var animationPlayer = $AnimationPlayer
+onready var sprite = $Sprite
 export(float) var health = 5
+
+func flash_damage():
+	sprite.material.set_shader_param("flash_modifier", 1 - (health/3))
 
 func loseHealth(amount):
 	health = health - amount
