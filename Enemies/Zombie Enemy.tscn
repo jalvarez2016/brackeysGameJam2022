@@ -10,7 +10,7 @@ height = 4.0
 [sub_resource type="CircleShape2D" id=2]
 radius = 195.01
 
-[node name="Zombie Enemy" type="KinematicBody2D"]
+[node name="Zombie Enemy" type="KinematicBody2D" groups=["enemy"]]
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]

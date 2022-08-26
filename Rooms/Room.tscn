@@ -40,4 +40,4 @@ tile_data = PoolIntArray( 65536, 0, 2621447, 65537, 0, 2621448, 65538, 0, 262144
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( -16, 0, 0, 0, 0, 352, 640, 352, 640, 64, 560, 64, 560, 16, 528, 16, 528, 64, 48, 64, 48, 16, 16, 16, 16, 64, 0, 64, 8, 0, 648, 0, 648, 368, -8, 368 )
+polygon = PoolVector2Array( -16, 0, 0, 0, 0, 352, 640, 352, 640, 64, 560, 64, 560, 40, 528, 40, 528, 64, 48, 64, 48, 40, 16, 40, 16, 64, 0, 64, 8, 0, 648, 0, 648, 368, -8, 368 )
