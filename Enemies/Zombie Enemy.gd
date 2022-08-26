@@ -5,6 +5,7 @@ var knockback = Vector2.ZERO
 var WALK_SPEED = 80
 onready var playerDetectionZone = $PlayerDetectionZone
 onready var player = get_node("/root/World/YSort/Player")
+onready var sprite = $Sprite
 
 enum {
 	ATTACK,
@@ -19,7 +20,7 @@ func _physics_process(delta):
 	knockback = move_and_slide(knockback)
 	var playerVisible = playerDetectionZone._can_see_Player()
 	#print(playerVisible)
-	if playerVisible && state != ATTACK:
+	if playerVisible && health > 0:
 		state = ATTACK
 	else:
 		state = STAY
@@ -32,10 +33,13 @@ func _physics_process(delta):
 				pass
 			STAY:
 				pass
+				
+func _damage_shade():
+	sprite.material.set_shader_param("flash_modifier", 1)
 
 func _on_Hurtbox_area_entered(area):
 	health -= 1
 	if health <= 0:
 		#replace queue free with corpse logic
-		queue_free()
+		state = STAY
 	knockback = area.knockback_vector * 120
