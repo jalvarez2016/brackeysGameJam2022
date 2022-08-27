@@ -71,7 +71,6 @@ func _physics_process(delta):
 		state = EATING
 		isEating = true
 	
-	#print(state)
 	match state:
 		WALK:
 			#animation logic
