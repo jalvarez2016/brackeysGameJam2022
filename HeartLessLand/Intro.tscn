@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://HeartLessLand/Introduction.gd" type="Script" id=1]
+[ext_resource path="res://Kenney Blocks.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[node name="IntroScene" type="Node2D"]
+
+[node name="IntroPanel" type="Panel" parent="."]
+margin_right = 640.0
+margin_bottom = 360.0
+
+[node name="ColorRect" type="ColorRect" parent="IntroPanel"]
+modulate = Color( 0.92549, 0.847059, 0.0313726, 1 )
+margin_right = 639.0
+margin_bottom = 358.0
+color = Color( 0.105882, 0.0196078, 0.247059, 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Introduction" type="RichTextLabel" parent="IntroPanel/ColorRect"]
+margin_left = 142.0
+margin_top = 34.0
+margin_right = 485.0
+margin_bottom = 322.0
+custom_fonts/normal_font = SubResource( 1 )
+meta_underlined = false
+text = "
+	Heartless 
+		"
+scroll_active = false
+script = ExtResource( 1 )
+text_color = Color( 0.87451, 0.0627451, 0.196078, 1 )
+
+[node name="StartButton" type="Button" parent="IntroPanel/ColorRect/Introduction"]
+anchor_left = 0.692
+anchor_top = 0.682
+anchor_right = 0.692
+anchor_bottom = 0.682
+margin_left = -204.356
+margin_top = -25.416
+margin_right = -89.356
+margin_bottom = 17.584
+custom_fonts/font = SubResource( 2 )
+text = "Start"
+clip_text = true
+expand_icon = true
+
+[node name="Button" type="Button" parent="IntroPanel/ColorRect/Introduction"]
+anchor_left = 0.267
+anchor_top = 0.679
+anchor_right = 0.267
+anchor_bottom = 0.679
+margin_left = 78.419
+margin_top = -25.552
+margin_right = 218.419
+margin_bottom = 19.448
+custom_fonts/font = SubResource( 3 )
+text = "How To Play"
+clip_text = true
+expand_icon = true
