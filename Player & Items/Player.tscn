@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Player & Items/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player & Items/Player-export.png" type="Texture" id=2]
 [ext_resource path="res://Player & Items/Flash_Damage.shader" type="Shader" id=3]
 
@@ -225,6 +225,7 @@ tracks/0/keys = {
 
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 script = ExtResource( 1 )
+health = 6.0
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 19 )
