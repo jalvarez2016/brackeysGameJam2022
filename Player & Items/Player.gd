@@ -12,6 +12,7 @@ var lastKnownDirection = 0
 var amount = 1
 var eatableEnemy
 onready var animationPlayer = $AnimationPlayer
+onready var attackBox = $AttackBox
 onready var damageTimer = $DamageTimer
 onready var strongTimer = $StrongTimer
 onready var sprite = $Sprite
@@ -61,7 +62,6 @@ func _physics_process(delta):
 		if input_vector != Vector2.ZERO:
 			state = WALK
 			lastKnownDirection = input_vector.x
-			print("updating known direction: ", lastKnownDirection)
 		else:
 			state = STAY
 	if Input.is_action_just_pressed("ui_attack"):
@@ -97,6 +97,13 @@ func _physics_process(delta):
 				velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 				
 		ATTACK:
+			attackBox.monitorable = true
+			attackBox.monitoring = true
+			if lastKnownDirection < 0:
+				attackBox.position.x = -28
+			else:
+				attackBox.position.x = 28
+
 			#animation logic
 			if isStrong:
 				if lastKnownDirection < 0:
@@ -125,11 +132,12 @@ func _physics_process(delta):
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 
 		EATING:
-			if isStrong:
-				animationPlayer.play("EatStrong")
-			else:
-				animationPlayer.play("EatNormal")
-			velocity = Vector2.ZERO
+			if eatableEnemy:
+				if isStrong:
+					animationPlayer.play("EatStrong")
+				else:
+					animationPlayer.play("EatNormal")
+				velocity = Vector2.ZERO
 	
 	velocity = move_and_slide(velocity)
 
@@ -145,11 +153,11 @@ func _on_StrongTimer_timeout():
 	isStrong = false
 
 func _end_Attack():
-	print("end attack")
 	isAttacking = false
+	attackBox.monitorable = false
+	attackBox.monitoring = false
 
 func _end_Eating():
-	print("end eating")
 	eatableEnemy.queue_free()
 	isStrong = true
 	strongTimer.start()

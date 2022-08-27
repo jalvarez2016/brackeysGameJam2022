@@ -28,8 +28,8 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 #		if collision.collider.name == "Player":
 		var object = collision.collider
-		if collision.collider.is_in_group("player")  && state == ATTACK:
-#			print("die")
+		if collision.collider_shape.is_in_group("player") && state == ATTACK:
+			print(collision.collider_shape)
 			object.dying(collision.collider_velocity)
 		
 	if playerVisible && health > 0:
@@ -50,8 +50,14 @@ func _damage_shade():
 	sprite.material.set_shader_param("flash_modifier", 1 - (health/3))
 
 func _on_Hurtbox_area_entered(area):
-	health -= 1
-	if health <= 0:
-		#replace queue free with corpse logic
-		state = STAY
-	knockback = area.knockback_vector * 120
+	if area.is_in_group("Attack") && health > 0:
+		var isStrong = area.get_owner().isStrong
+		if isStrong:
+			health -= 2
+		else:
+			health -= 1
+		if health <= 0:
+			state = STAY
+			
+		var direction = (position - player.position).normalized()
+		direction = move_and_slide(direction * 1000)
