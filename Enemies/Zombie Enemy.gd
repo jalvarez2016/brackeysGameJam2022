@@ -14,6 +14,7 @@ enum {
 var state = STAY
 
 export(float) var health = 3
+export(bool) var dead = false
 
 func _physics_process(delta):
 	_damage_shade()
@@ -27,9 +28,9 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 #		if collision.collider.name == "Player":
 		var object = collision.collider
-		if collision.collider.is_in_group("player"):
+		if collision.collider.is_in_group("player")  && state == ATTACK:
 #			print("die")
-			object.dying()
+			object.dying(collision.collider_velocity)
 		
 	if playerVisible && health > 0:
 		state = ATTACK

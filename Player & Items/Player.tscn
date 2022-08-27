@@ -10,11 +10,9 @@ shader = ExtResource( 3 )
 shader_param/flash_color = Color( 1, 1, 1, 1 )
 shader_param/flash_modifier = 0.0
 
-[sub_resource type="CircleShape2D" id=17]
-radius = 30.1496
-
-[sub_resource type="CapsuleShape2D" id=1]
-height = 0.0
+[sub_resource type="CapsuleShape2D" id=20]
+radius = 8.0
+height = 8.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "AttackLeftNormal"
@@ -28,6 +26,20 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "points": PoolRealArray( 34, -0.25, 0, 0.25, 0, 35, -0.25, 0, 0.25, 0, 36, -0.25, 0, 0.25, 0, 37, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.3, 0.5, 0.7 )
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_end_Attack"
+} ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -43,6 +55,20 @@ tracks/0/keys = {
 "points": PoolRealArray( 12, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0, 14, -0.25, 0, 0.25, 0, 15, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6 )
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_end_Attack"
+} ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "AttackRightNormal"
@@ -57,6 +83,20 @@ tracks/0/keys = {
 "points": PoolRealArray( 30, -0.25, 0, 0.25, 0, 31, -0.25, 0, 0.25, 0, 32, -0.25, 0, 0.25, 0, 33, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.2, 0.4, 0.7 )
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_end_Attack"
+} ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "AttackRightStrong"
@@ -69,6 +109,20 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "points": PoolRealArray( 8, -0.25, 0, 0.25, 0, 9, -0.25, 0, 0.25, 0, 10, -0.25, 0, 0.25, 0, 11, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.2, 0.4, 0.7 )
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_end_Attack"
+} ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -85,6 +139,20 @@ tracks/0/keys = {
 "points": PoolRealArray( 19, -0.25, 0, 0.25, 0, 20, -0.25, 0, 0.25, 0, 21, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.1, 0.2 )
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_end_Eating"
+} ]
+}
 
 [sub_resource type="Animation" id=12]
 resource_name = "EatStrong"
@@ -99,6 +167,20 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "points": PoolRealArray( 16, -0.25, 0, 0.25, 0, 17, -0.25, 0, 0.25, 0, 18, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.2, 0.3 )
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_end_Eating"
+} ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -223,6 +305,8 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.5, 0.7 )
 }
 
+[sub_resource type="CapsuleShape2D" id=1]
+
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 script = ExtResource( 1 )
 health = 6.0
@@ -233,17 +317,11 @@ texture = ExtResource( 2 )
 hframes = 38
 frame = 23
 
-[node name="Area2D" type="Area2D" parent="."]
-visible = false
+[node name="HurtBox" type="Area2D" parent="."]
+position = Vector2( 1, 18 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 17 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( -4.26326e-14, 16 )
-rotation = 1.5708
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource( 20 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/AttackLeftNormal = SubResource( 2 )
@@ -262,5 +340,24 @@ anims/WalkLeftStrong = SubResource( 15 )
 anims/WalkRightNormal = SubResource( 9 )
 anims/WalkRightStrong = SubResource( 16 )
 
-[node name="Strong Timer" type="Timer" parent="."]
+[node name="StrongTimer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+position = Vector2( 26, 14 )
+monitoring = false
+monitorable = false
+
+[node name="AttackBox" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="DetectionShape" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 18 )
+shape = SubResource( 20 )
+
+[connection signal="timeout" from="StrongTimer" to="." method="_on_StrongTimer_timeout"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_DamageTimer_timeout"]
