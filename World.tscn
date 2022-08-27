@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player & Items/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Rooms/Room.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Zombie Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Rooms/RoomManager.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node2D"]
 
-[node name="Treasure Room" parent="." instance=ExtResource( 2 )]
+[node name="Room" parent="." instance=ExtResource( 2 )]
 
 [node name="YSort" type="YSort" parent="."]
 position = Vector2( 32, 88 )
@@ -18,3 +19,5 @@ position = Vector2( 320, 56 )
 
 [node name="Zombie Enemy" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 248, 112 )
+
+[node name="RoomManager" parent="." instance=ExtResource( 4 )]
