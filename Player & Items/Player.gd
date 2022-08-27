@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+
+
 const ACCELERATION = 500
 const MAX_SPEED = 100
 const FRICTION = 500
@@ -8,10 +10,17 @@ var IsStrong = false
 var isSprinting = false
 var money = 0
 var lastKnownDirection = 0
-
+var amount = 1
 onready var animationPlayer = $AnimationPlayer
 onready var sprite = $Sprite
 export(float) var health = 5
+
+
+func dying():
+	print("die")
+	loseHealth(0.1)
+	print(health)
+
 
 func flash_damage():
 	sprite.material.set_shader_param("flash_modifier", 1 - (health/3))
@@ -43,7 +52,8 @@ func _physics_process(delta):
 			else:
 				animationPlayer.play("WalkLeftNormal")
 			
-		
+				
+				
 		#sprinting logic
 		isSprinting = Input.is_action_pressed("ui_sprint")
 		if Input.is_action_just_released("ui_sprint"):
@@ -71,3 +81,6 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	
 	velocity = move_and_slide(velocity)
+	
+	
+

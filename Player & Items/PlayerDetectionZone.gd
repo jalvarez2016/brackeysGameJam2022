@@ -14,3 +14,4 @@ func _on_PlayerDetectionZone_area_entered(area):
 		player = area.find_parent('Player').position
 		#player.is_in_group("player")
 		print("entered")
+

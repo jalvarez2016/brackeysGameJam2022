@@ -21,6 +21,16 @@ func _physics_process(delta):
 	knockback = move_and_slide(knockback)
 	var playerVisible = playerDetectionZone._can_see_Player()
 	#print(playerVisible)
+	
+	#enemy collision dmg logic
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+#		if collision.collider.name == "Player":
+		var object = collision.collider
+		if collision.collider.is_in_group("player"):
+#			print("die")
+			object.dying()
+		
 	if playerVisible && health > 0:
 		state = ATTACK
 	else:
