@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/starMusic.mp3-5ba3b118e65171509f98dc66dbd78fa0.mp3str"
+
+[deps]
+
+source_file="res://soundEffects/starMusic.mp3"
+dest_files=[ "res://.import/starMusic.mp3-5ba3b118e65171509f98dc66dbd78fa0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/inGameMusic.mp3-690dac8b0face84e6d491ceea327e436.mp3str"
+
+[deps]
+
+source_file="res://soundEffects/inGameMusic.mp3"
+dest_files=[ "res://.import/inGameMusic.mp3-690dac8b0face84e6d491ceea327e436.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

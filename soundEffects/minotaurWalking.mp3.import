@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/minotaurWalking.mp3-bbb0887f7216f88a15182f71a6a358bd.mp3str"
+
+[deps]
+
+source_file="res://soundEffects/minotaurWalking.mp3"
+dest_files=[ "res://.import/minotaurWalking.mp3-bbb0887f7216f88a15182f71a6a358bd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
