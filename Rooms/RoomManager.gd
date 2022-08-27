@@ -40,7 +40,7 @@ func _process(_delta):
 		if playerHealth < hearts.size() && hearts.size() > 0:
 			print("Removing Hearts: ", playerHealth, " ",hearts.size())
 			var amountLoss = hearts.size() - playerHealth
-			while amountLoss > 0:
+			while amountLoss > 0 && hearts.size() > 0:
 				var lostHeart = hearts.pop_back()
 				lostHeart.queue_free()
 				amountLoss -= 1
