@@ -37,7 +37,7 @@ func _process(_delta):
 				add_child(heartSprite)
 				heartAmount += 1
 				
-		if playerHealth < hearts.size():
+		if playerHealth < hearts.size() && hearts.size() > 0:
 			print("Removing Hearts: ", playerHealth, " ",hearts.size())
 			var amountLoss = hearts.size() - playerHealth
 			while amountLoss > 0:
