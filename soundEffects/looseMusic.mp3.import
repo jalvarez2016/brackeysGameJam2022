@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/looseMusic.mp3-103d61391819f1034a5b0c73e2f18c1b.mp3str"
+
+[deps]
+
+source_file="res://soundEffects/looseMusic.mp3"
+dest_files=[ "res://.import/looseMusic.mp3-103d61391819f1034a5b0c73e2f18c1b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
