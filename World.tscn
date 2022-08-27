@@ -16,8 +16,10 @@ position = Vector2( 32, 88 )
 
 [node name="Zombie Enemy3" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 320, 56 )
+health = 0.0
 
 [node name="Zombie Enemy" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 248, 112 )
+health = 0.0
 
 [node name="RoomManager" parent="." instance=ExtResource( 4 )]

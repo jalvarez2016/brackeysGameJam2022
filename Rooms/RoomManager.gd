@@ -7,7 +7,6 @@ var playerHealth
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var player = get_tree().get_nodes_in_group('player')[0]
-	var enemies = get_tree().get_nodes_in_group('enemy')
 	if player:
 		playerHealth = player.health
 		var heartLocation = Vector2(0, 0)
@@ -28,7 +27,7 @@ func _process(_delta):
 		playerHealth = player.health
 		
 		if playerHealth > hearts.size():
-			print("Adding hearts: ",playerHealth, " ", hearts.size())
+			#print("Adding hearts: ",playerHealth, " ", hearts.size())
 			var heartLocation = Vector2(hearts.size() * 24, 0)
 			var heartAmount = hearts.size()
 			while heartAmount < playerHealth:
@@ -38,7 +37,7 @@ func _process(_delta):
 				heartAmount += 1
 				
 		if playerHealth < hearts.size() && hearts.size() > 0:
-			print("Removing Hearts: ", playerHealth, " ",hearts.size())
+			#print("Removing Hearts: ", playerHealth, " ",hearts.size())
 			var amountLoss = hearts.size() - playerHealth
 			while amountLoss > 0 && hearts.size() > 0:
 				var lostHeart = hearts.pop_back()
