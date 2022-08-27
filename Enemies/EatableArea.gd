@@ -1,10 +1,11 @@
 extends Area2D
 
 onready var txt = $Text
-onready var enemyHealth = get_owner().health
 
 func _on_EatableArea_area_entered(area):
+	var enemyHealth = get_owner().health
 	if(area.get_owner().is_in_group("player") && enemyHealth == 0):
+		print("showing eatable")
 		txt.visible = true
 		get_owner().dead = true
 	pass
