@@ -1,8 +1,11 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player & Items/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player & Items/Player-export.png" type="Texture" id=2]
 [ext_resource path="res://Player & Items/Flash_Damage.shader" type="Shader" id=3]
+[ext_resource path="res://soundEffects/StepsTwo.mp3" type="AudioStream" id=4]
+[ext_resource path="res://soundEffects/punch.mp3" type="AudioStream" id=5]
+[ext_resource path="res://soundEffects/zombieAttacking.mp3" type="AudioStream" id=6]
 
 [sub_resource type="ShaderMaterial" id=19]
 resource_local_to_scene = true
@@ -34,9 +37,12 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "on_play_attack_sfc"
+}, {
 "args": [  ],
 "method": "_end_Attack"
 } ]
@@ -62,9 +68,12 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "on_play_attack_sfc"
+}, {
 "args": [  ],
 "method": "_end_Attack"
 } ]
@@ -90,9 +99,12 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "on_play_attack_sfc"
+}, {
 "args": [  ],
 "method": "_end_Attack"
 } ]
@@ -117,9 +129,12 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "on_play_attack_sfc"
+}, {
 "args": [  ],
 "method": "_end_Attack"
 } ]
@@ -146,9 +161,12 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.3 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "on_play_eating_sfc"
+}, {
 "args": [  ],
 "method": "_end_Eating"
 } ]
@@ -263,6 +281,20 @@ tracks/0/keys = {
 "points": PoolRealArray( 26, -0.25, 0, 0.25, 0, 27, -0.25, 0, 0.25, 0, 28, -0.25, 0, 0.25, 0, 29, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.3, 0.5, 0.8 )
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_play_walk_sfc"
+} ]
+}
 
 [sub_resource type="Animation" id=15]
 resource_name = "WalkLeftStrong"
@@ -276,6 +308,20 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "points": PoolRealArray( 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.3, 0.6, 0.8 )
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_play_walk_sfc"
+} ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -291,6 +337,20 @@ tracks/0/keys = {
 "points": PoolRealArray( 22, -0.25, 0, 0.25, 0, 23, -0.25, 0, 0.25, 0, 24, -0.25, 0, 0.25, 0, 25, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.2, 0.5, 0.8 )
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_play_walk_sfc"
+} ]
+}
 
 [sub_resource type="Animation" id=16]
 resource_name = "WalkRightStrong"
@@ -301,8 +361,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 0.2, 0.5, 0.7 )
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.2, 0.5, 0.7, 0.701 )
 }
 
 [sub_resource type="CapsuleShape2D" id=21]
@@ -358,6 +418,17 @@ shape = SubResource( 21 )
 [node name="DetectionShape" type="CollisionShape2D" parent="." groups=["player"]]
 position = Vector2( 1, 18 )
 shape = SubResource( 20 )
+
+[node name="steps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 15.117
+
+[node name="sword" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 10.0
+
+[node name="eating" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="timeout" from="StrongTimer" to="." method="_on_StrongTimer_timeout"]
 [connection signal="timeout" from="DamageTimer" to="." method="_on_DamageTimer_timeout"]
