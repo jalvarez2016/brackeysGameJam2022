@@ -159,7 +159,8 @@ func _end_Attack():
 	attackBox.monitoring = false
 
 func _end_Eating():
-	eatableEnemy.queue_free()
+	if eatableEnemy:
+		eatableEnemy.queue_free()
 	isStrong = true
 	strongTimer.start()
 	isEating = false
