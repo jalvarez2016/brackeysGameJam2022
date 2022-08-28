@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://soundEffects/backGroundMusic.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Rooms/Room.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Enemies/Zombie Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player & Items/Player.tscn" type="PackedScene" id=4]
@@ -28,5 +29,10 @@ position = Vector2( 285, 111 )
 position = Vector2( 482, 210 )
 
 [node name="RoomManager" parent="." instance=ExtResource( 6 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -20.0
+autoplay = true
 
 [editable path="Room"]
