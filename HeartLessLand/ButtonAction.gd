@@ -20,10 +20,14 @@ func _on_TutorialButton_pressed():
 func _on_ReadyButton_pressed():
 	get_tree().change_scene("res://HeartLessLand/World.tscn")
 
-#Game Over Scene
-func _on_GameOverButton_pressed():
-	get_tree().change_scene("res://HeartLessLand/World.tscn")
 
-
+#Win Scene
 func _on_MainMenuButton_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://HeartLessLand/Intro.tscn")
+
+#Game Over Scene
+func _on_GameButt_pressed():
+	get_tree().change_scene("res://HeartLessLand/Intro.tscn")
+
+
+

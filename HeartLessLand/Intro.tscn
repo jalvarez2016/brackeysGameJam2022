@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://HeartLessLand/Introduction.gd" type="Script" id=1]
 [ext_resource path="res://HeartLessLand/Kenney Blocks.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://HeartLessLand/ButtonAction.gd" type="Script" id=3]
-=======
-[gd_scene load_steps=7 format=2]
-
-[ext_resource path="res://HeartLessLand/Introduction.gd" type="Script" id=1]
-[ext_resource path="res://Kenney Blocks.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://soundEffects/starMusic.mp3" type="AudioStream" id=3]
->>>>>>> aead65849ffcf349f6219bb0bad395e0b4c0f05f
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -106,14 +98,7 @@ custom_fonts/font = SubResource( 3 )
 text = "How To Play"
 clip_text = true
 expand_icon = true
-<<<<<<< HEAD
 script = ExtResource( 3 )
 
 [connection signal="pressed" from="IntroPanel/ColorRect/Introduction/StartButton" to="IntroPanel/ColorRect/Introduction/StartButton" method="_on_StartButton_pressed"]
 [connection signal="pressed" from="IntroPanel/ColorRect/Introduction/TutorialButton" to="IntroPanel/ColorRect/Introduction/TutorialButton" method="_on_TutorialButton_pressed"]
-=======
-
-[node name="introSong" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-autoplay = true
->>>>>>> aead65849ffcf349f6219bb0bad395e0b4c0f05f

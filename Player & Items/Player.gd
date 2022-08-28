@@ -28,7 +28,7 @@ enum {
 var state = STAY
 
 func dying(colVel):
-	loseHealth(0.1)
+	loseHealth(0.5)
 	velocity = Vector2(colVel.x, colVel.y).normalized()
 	velocity = move_and_slide(velocity * 600)
 	flash_damage()
@@ -46,6 +46,8 @@ func gainHealth(amount):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if(health <= 0):
+		get_tree().change_scene("res://HeartLessLand/GO.tscn")
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")

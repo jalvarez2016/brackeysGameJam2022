@@ -1,12 +1,23 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://HeartLessLand/Controls.gd" type="Script" id=1]
 [ext_resource path="res://HeartLessLand/Kenney Blocks.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://HeartLessLand/ButtonAction.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
 font_data = ExtResource( 2 )
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends RichTextLabel
+
+
+export(Color,RGB) var text_color
+
+func _ready():
+	set_modulate(text_color)
+	pass # Replace with function body.
+	
+"
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 2 )
@@ -39,7 +50,7 @@ meta_underlined = false
 text = "Tutorial
 		"
 scroll_active = false
-script = ExtResource( 1 )
+script = SubResource( 4 )
 text_color = Color( 0.921569, 0.894118, 0.164706, 1 )
 
 [node name="ReadyButton" type="Button" parent="HowToPlay/ColorRect"]
