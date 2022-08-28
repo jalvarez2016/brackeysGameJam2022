@@ -69,7 +69,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_attack"):
 		state = ATTACK
 		isAttacking = true
-	if Input.is_action_just_pressed("ui_eat") && canEat:
+	if Input.is_action_just_pressed("ui_eat") && canEat && !isEating:
 		state = EATING
 		isEating = true
 	
