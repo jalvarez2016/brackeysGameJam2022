@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://HeartLessLand/Introduction.gd" type="Script" id=1]
-[ext_resource path="res://Kenney Blocks.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://HeartLessLand/Kenney Blocks.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://HeartLessLand/ButtonAction.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -9,6 +10,33 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 2 )
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Button
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_ReadyButton_pressed():
+	get_tree().change_scene(\"res://HeartLessLand/World.tscn\")
+
+
+func _on_StartButton_pressed():
+	get_tree().change_scene(\"res://HeartLessLand/World.tscn\")
+"
 
 [sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 2 )
@@ -55,8 +83,9 @@ custom_fonts/font = SubResource( 2 )
 text = "Start"
 clip_text = true
 expand_icon = true
+script = SubResource( 4 )
 
-[node name="Button" type="Button" parent="IntroPanel/ColorRect/Introduction"]
+[node name="TutorialButton" type="Button" parent="IntroPanel/ColorRect/Introduction"]
 anchor_left = 0.267
 anchor_top = 0.679
 anchor_right = 0.267
@@ -69,3 +98,7 @@ custom_fonts/font = SubResource( 3 )
 text = "How To Play"
 clip_text = true
 expand_icon = true
+script = ExtResource( 3 )
+
+[connection signal="pressed" from="IntroPanel/ColorRect/Introduction/StartButton" to="IntroPanel/ColorRect/Introduction/StartButton" method="_on_StartButton_pressed"]
+[connection signal="pressed" from="IntroPanel/ColorRect/Introduction/TutorialButton" to="IntroPanel/ColorRect/Introduction/TutorialButton" method="_on_TutorialButton_pressed"]
