@@ -163,3 +163,15 @@ func _end_Eating():
 	isStrong = true
 	strongTimer.start()
 	isEating = false
+
+func on_play_walk_sfc():
+	if !$steps.playing:
+		$steps.play()
+
+func on_play_attack_sfc():
+	if !$sword.playing:
+		$sword.play()
+		
+func on_play_eating_sfc():
+	if !$eating.playing:
+		$eating.play()
