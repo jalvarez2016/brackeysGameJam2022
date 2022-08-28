@@ -28,7 +28,7 @@ enum {
 var state = STAY
 
 func dying(colVel):
-	loseHealth(0.5)
+	loseHealth(1)
 	velocity = Vector2(colVel.x, colVel.y).normalized()
 	velocity = move_and_slide(velocity * 600)
 	flash_damage()

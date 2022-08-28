@@ -4,7 +4,7 @@ extends KinematicBody2D
 var knockback = Vector2.ZERO
 var WALK_SPEED = 80
 onready var playerDetectionZone = $PlayerDetectionZone
-onready var player = get_node("/root/World/YSort/Player")
+onready var player
 onready var sprite = $Sprite
 
 enum {
@@ -17,6 +17,7 @@ export(float) var health = 3
 export(bool) var dead = false
 
 func _physics_process(delta):
+	player = get_tree().get_nodes_in_group('player')[0]
 	_damage_shade()
 	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
 	knockback = move_and_slide(knockback)

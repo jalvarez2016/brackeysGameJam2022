@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Enemies/Damage.shader" type="Shader" id=1]
+[ext_resource path="res://Rooms/GoToWinning.gd" type="Script" id=2]
+[ext_resource path="res://Player & Items/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/Zombie Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Rooms/RoomManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Rooms/Room.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/Minataur.png" type="Texture" id=7]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/flash_color = Color( 0.74902, 0.0666667, 0.0666667, 1 )
+shader_param/flash_modifier = 0.0
+
+[node name="HellRoom" type="Node2D"]
+
+[node name="Room" parent="." instance=ExtResource( 6 )]
+
+[node name="Area2D" parent="Room" index="3"]
+script = ExtResource( 2 )
+
+[node name="RoomManager" parent="." instance=ExtResource( 5 )]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 24, 88 )
+
+[node name="Zombie Enemy" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 184, 280 )
+
+[node name="Zombie Enemy2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 256, 176 )
+
+[node name="Zombie Enemy3" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 208, 104 )
+
+[node name="Zombie Enemy7" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 128, 168 )
+
+[node name="Zombie Enemy8" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 104, 224 )
+
+[node name="Zombie Enemy4" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 448, 224 )
+health = 10.0
+
+[node name="Sprite" parent="YSort/Zombie Enemy4" index="0"]
+material = SubResource( 1 )
+scale = Vector2( 0.09, 0.09 )
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="Collideable" parent="YSort/Zombie Enemy4" index="4"]
+position = Vector2( 0, 16 )
+
+[node name="Zombie Enemy5" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 456, 120 )
+health = 10.0
+
+[node name="Sprite" parent="YSort/Zombie Enemy5" index="0"]
+material = SubResource( 1 )
+scale = Vector2( 0.09, 0.09 )
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="Collideable" parent="YSort/Zombie Enemy5" index="4"]
+position = Vector2( 0, 16 )
+
+[node name="Zombie Enemy6" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 552, 192 )
+health = 10.0
+
+[node name="Sprite" parent="YSort/Zombie Enemy6" index="0"]
+material = SubResource( 1 )
+scale = Vector2( 0.09, 0.09 )
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="Collideable" parent="YSort/Zombie Enemy6" index="4"]
+position = Vector2( 0, 16 )
+
+[editable path="Room"]
+[editable path="YSort/Zombie Enemy4"]
+[editable path="YSort/Zombie Enemy4/PlayerDetectionZone"]
+[editable path="YSort/Zombie Enemy5"]
+[editable path="YSort/Zombie Enemy5/PlayerDetectionZone"]
+[editable path="YSort/Zombie Enemy6"]
+[editable path="YSort/Zombie Enemy6/PlayerDetectionZone"]

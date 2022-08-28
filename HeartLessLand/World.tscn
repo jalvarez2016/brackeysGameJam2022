@@ -7,6 +7,7 @@
 [ext_resource path="res://soundEffects/backGroundMusic.mp3" type="AudioStream" id=5]
 
 [node name="World" type="Node2D"]
+position = Vector2( 1, 0 )
 
 [node name="Room" parent="." instance=ExtResource( 2 )]
 
@@ -17,6 +18,9 @@ position = Vector2( 32, 88 )
 
 [node name="Zombie Enemy3" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 320, 56 )
+
+[node name="Zombie Enemy4" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 444, 117 )
 
 [node name="Zombie Enemy" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 248, 112 )
