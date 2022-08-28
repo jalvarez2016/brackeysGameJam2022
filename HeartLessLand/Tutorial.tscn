@@ -79,15 +79,15 @@ custom_fonts/normal_font = SubResource( 3 )
 text = "
 Movements:
 
-1.Press Standard Arrow Keys
+1.Press  Standard  Arrow  Keys
 
-2.Press Ctrl for attack
+2.Press  space  for  attack
 
-3.Press C to eat 
+3.Press  C  to  eat 
 
-4.Press Shift to Run
+4.Press  Shift  to  Run
 
-"
+5.Kill all zombies"
 fit_content_height = true
 
 [connection signal="pressed" from="HowToPlay/ColorRect/ReadyButton" to="HowToPlay/ColorRect/ReadyButton" method="_on_ReadyButton_pressed"]
